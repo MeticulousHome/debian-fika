@@ -21,7 +21,7 @@ INCLUDE_PACKAGES="locales,openssh-server,ethtool,hostapd,ifupdown,wpasupplicant,
 base-passwd,busybox,dbus,init,login,util-linux,nano,ntp,dosfstools,\
 net-tools,network-manager,alsa-utils,usbutils,gpiod,iperf3,bluetooth,bluez,\
 bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpam-systemd,\
-iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,firmware-brcm80211,\
+iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
 libubootenv-tool,${EXTRA_PACKAGES}"
 
 debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" bookworm ${ROOTFS_BASE}/
