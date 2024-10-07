@@ -81,6 +81,8 @@ systemd-nspawn -D ${ROOTFS_BASE}/ --bind debs:/opt/debs bash -c "apt install -y 
 	/opt/debs/nxp/wayland-protocols-imx_*.deb \
 	/opt/debs/nxp/weston_*.deb"
 
+systemd-nspawn -D ${ROOTFS_BASE}/ ln -sf /bin/busybox /bin/usleep
+
 rm -f ${ROOTFS_BASE}-base.tar.gz
 pushd ${ROOTFS_BASE}
 tar cf ../${ROOTFS_BASE}-base.tar.gz -I pigz --exclude=sys --exclude=proc --exclude=dev *
