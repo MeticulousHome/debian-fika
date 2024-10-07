@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Sat, 31 Dec 2022 16:51:44 +0500
+Source: libg2d-viv
+Binary: libg2d-viv libg2d-viv-dev
+Architecture: arm64
+Version: 6.4.3.p4.4-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Leonardo Held <leonardo.held@toradex.com>
+Changed-By: Abdur Rehman <abdur.rehman@toradex.com>
+Description:
+ libg2d-viv - libg2d-viv(imx-gpu-g2d)
+ libg2d-viv-dev - libg2d-viv(imx-gpu-g2d) - Development files
+Changes:
+ libg2d-viv (6.4.3.p4.4-1) unstable; urgency=medium
+ .
+   * update to NXP BSP 5.15.52-2.1.0
+Checksums-Sha1:
+ ccf73397788e24ff6159d85937d515330b134023 5364 libg2d-viv-dev_6.4.3.p4.4-1_arm64.deb
+ 932a4fb1cb5193a24bff0548f702ad0cb0810441 5422 libg2d-viv_6.4.3.p4.4-1_arm64.buildinfo
+ a05f06766089f5d811188a5a5ece601de6adb194 18712 libg2d-viv_6.4.3.p4.4-1_arm64.deb
+Checksums-Sha256:
+ 6c9868bdcc1579efcc4749c05c813fe0ba735f13f5e17145b7d7d6cefa8a591f 5364 libg2d-viv-dev_6.4.3.p4.4-1_arm64.deb
+ 025eb2fc87d1e3504bbfda2bc94aa010c206df3f99b27718b91260e89681647d 5422 libg2d-viv_6.4.3.p4.4-1_arm64.buildinfo
+ b500960f4c935283d1048cc56bbe12526a39503a913954d61045716d951bb02e 18712 libg2d-viv_6.4.3.p4.4-1_arm64.deb
+Files:
+ aefbfbe5e544e07a3315bd2e54ecea65 5364 libdevel optional libg2d-viv-dev_6.4.3.p4.4-1_arm64.deb
+ 7f392bfe30c02af9eec17ca3fcd76027 5422 libs optional libg2d-viv_6.4.3.p4.4-1_arm64.buildinfo
+ e634cae079611b47979cc371a06b771b 18712 libs optional libg2d-viv_6.4.3.p4.4-1_arm64.deb

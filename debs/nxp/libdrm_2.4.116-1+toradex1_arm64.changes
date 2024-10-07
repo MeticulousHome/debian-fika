@@ -1,0 +1,96 @@
+Format: 1.8
+Date: Fri, 30 Aug 2024 10:12:02 -0300
+Source: libdrm
+Binary: libdrm-amdgpu1 libdrm-amdgpu1-dbgsym libdrm-common libdrm-dev libdrm-etnaviv1 libdrm-etnaviv1-dbgsym libdrm-freedreno1 libdrm-freedreno1-dbgsym libdrm-nouveau2 libdrm-nouveau2-dbgsym libdrm-radeon1 libdrm-radeon1-dbgsym libdrm-tegra0 libdrm-tegra0-dbgsym libdrm-tests libdrm-tests-dbgsym libdrm-vivante1 libdrm-vivante1-dbgsym libdrm2 libdrm2-dbgsym libdrm2-udeb
+Architecture: arm64 all
+Version: 2.4.116-1+toradex1
+Distribution: bookworm
+Urgency: medium
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Changed-By: Leonardo Held <leonardo.held@toradex.com>
+Description:
+ libdrm-amdgpu1 - Userspace interface to amdgpu-specific kernel DRM services -- run
+ libdrm-common - Userspace interface to kernel DRM services -- common files
+ libdrm-dev - Userspace interface to kernel DRM services -- development files
+ libdrm-etnaviv1 - Userspace interface to etnaviv-specific kernel DRM services -- ru
+ libdrm-freedreno1 - Userspace interface to msm/kgsl kernel DRM services -- runtime
+ libdrm-nouveau2 - Userspace interface to nouveau-specific kernel DRM services -- ru
+ libdrm-radeon1 - Userspace interface to radeon-specific kernel DRM services -- run
+ libdrm-tegra0 - Userspace interface to tegra-specific kernel DRM services -- runt
+ libdrm-tests - Testing tools from the libdrm project
+ libdrm-vivante1 - Userspace interface to vivante-specific kernel DRM services -- ru
+ libdrm2    - Userspace interface to kernel DRM services -- runtime
+ libdrm2-udeb - Userspace interface to kernel DRM services -- runtime (udeb)
+Changes:
+ libdrm (2.4.116-1+toradex1) bookworm; urgency=medium
+ .
+   * New libdrm-imx release from Scarthgap.
+Checksums-Sha1:
+ 210df4d874d958bf7e676b7e21635d1ab509ef18 51792 libdrm-amdgpu1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 2e63621cc3b4e5d6180ee27170b31ff10c878421 20196 libdrm-amdgpu1_2.4.116-1+toradex1_arm64.deb
+ 121c5d66262dbd02f7b8d62ae2406b6290a3cb79 7268 libdrm-common_2.4.116-1+toradex1_all.deb
+ 62bac128c53cf8a47465d696a786c512523a91f7 256472 libdrm-dev_2.4.116-1+toradex1_arm64.deb
+ d210f848ce7d3fea619713e2d7974c10526b6b50 25500 libdrm-etnaviv1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ f9969075c98d2a3c52458ee5af92dda4635047da 13504 libdrm-etnaviv1_2.4.116-1+toradex1_arm64.deb
+ 12e5cb669d8196a327fce12a50f83c421bcd4a79 50224 libdrm-freedreno1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 352085965060f6c4ad80bfc06df51652f891ea16 20132 libdrm-freedreno1_2.4.116-1+toradex1_arm64.deb
+ b8202e633f4414e88b59a15dbe80411c96bc3d31 39628 libdrm-nouveau2-dbgsym_2.4.116-1+toradex1_arm64.deb
+ ba358b48c9a44face667db9ce188a1017c3b586a 18296 libdrm-nouveau2_2.4.116-1+toradex1_arm64.deb
+ 102f2a55c3ac79f049c8ae64c3329c196099492f 46072 libdrm-radeon1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 144607edca006d02dbd1e1b25ad3da5b36d99ef6 20692 libdrm-radeon1_2.4.116-1+toradex1_arm64.deb
+ 328efc009b797d6c931447eb2758be66af9939f3 19584 libdrm-tegra0-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 60233ec1732401b09348b775312a1d2dc55455d7 10916 libdrm-tegra0_2.4.116-1+toradex1_arm64.deb
+ d7106f564e63c98c1e44178ca803965af1adec2a 261212 libdrm-tests-dbgsym_2.4.116-1+toradex1_arm64.deb
+ a9f617fe37dfa3dce4ae75792e9866f73b68a65f 62484 libdrm-tests_2.4.116-1+toradex1_arm64.deb
+ 3606c38e236897770f733fa6e6d68d7131bf893b 11032 libdrm-vivante1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 46de9e97b64f27207b3fa49073382ef132431407 9336 libdrm-vivante1_2.4.116-1+toradex1_arm64.deb
+ a2e0208d3c0561b12f47038a5c7c330a26e4c051 106020 libdrm2-dbgsym_2.4.116-1+toradex1_arm64.deb
+ ab9fbf7392758bacb511e102014d9ceebd342eda 30872 libdrm2-udeb_2.4.116-1+toradex1_arm64.udeb
+ c111aec628cc75da9c08712d7555ba15188865d6 36948 libdrm2_2.4.116-1+toradex1_arm64.deb
+ 68e4a4135fec6a77dbf765e506a8de0fed0a007a 12755 libdrm_2.4.116-1+toradex1_arm64.buildinfo
+Checksums-Sha256:
+ 9282811e2b05bb6476e3c567a56642d7ade94ce104e12b2943181665442f9a0d 51792 libdrm-amdgpu1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ fd1415b95bc8816c458226aad5bf15697fabbdb1fcc70758ce28ca44e52efe97 20196 libdrm-amdgpu1_2.4.116-1+toradex1_arm64.deb
+ 7861581bd1c660fb1425a3a0d2f3524b4453723aa54c1d02f500b424258f37d1 7268 libdrm-common_2.4.116-1+toradex1_all.deb
+ b1005661fe85b630eded144d46167ba7453774e2b1a3b057b13fcad20b0c6346 256472 libdrm-dev_2.4.116-1+toradex1_arm64.deb
+ d71119775932e15280c553f4272ab4ca1e02e7baee6621d93540a6b5182e114e 25500 libdrm-etnaviv1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ dd233d9953d9610193ec1c8dfa6110e5ca49bd6ae60b3198248661bfae08c658 13504 libdrm-etnaviv1_2.4.116-1+toradex1_arm64.deb
+ 79cd7d7f06f0a41f3eae1a619a24043ce40e35c23d50f7b74d677e0a9d93a1eb 50224 libdrm-freedreno1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 90936f2ee0a285710450e3110ef6d0c6a34d8fe22125a40ff1ecf5ae66d676a9 20132 libdrm-freedreno1_2.4.116-1+toradex1_arm64.deb
+ 916c57b201ea3607b5d105ccacf4b2ca830291820f541f0b48a51bbdee590172 39628 libdrm-nouveau2-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 38e7d75ea52fd925634e057c6c1e6ed654c18541cf9549138c5b4d4730a26f7e 18296 libdrm-nouveau2_2.4.116-1+toradex1_arm64.deb
+ 82492e42a656eff685f6104cf24e5c1524168a4e78b578c5c731e894827d95bf 46072 libdrm-radeon1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 007e081e7d479566c717b87196a1e91c555db4e16eb0f490ee893d04eb0ef779 20692 libdrm-radeon1_2.4.116-1+toradex1_arm64.deb
+ cc85d6cce1543efbe9a097f86595e906c043edc83cf149a3af67facaf035c219 19584 libdrm-tegra0-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 64925c8642032fa3e8d514e12e03b3c696d82afa02184a70f42d4878bf84af52 10916 libdrm-tegra0_2.4.116-1+toradex1_arm64.deb
+ e389fcfc045cac6c848bcf4d9e9395655eaf3d311b08da4f20dafa424a807042 261212 libdrm-tests-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 9bf76c83feed810a735e1b3077e47a2bb7808ab6fbdd34ec58bc86eb8ae7222a 62484 libdrm-tests_2.4.116-1+toradex1_arm64.deb
+ a235e1b3e041cdd372df1bab02cc072dba38aaaf0ece614328b7cebc88441e50 11032 libdrm-vivante1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 62b2c9589135a42e291573f458d0fd4ae41f0a4bc984053d9955c65b2250b18f 9336 libdrm-vivante1_2.4.116-1+toradex1_arm64.deb
+ c980f78b594e1a3887eaf9d6eea5cb910d4983c414aabd27eb37aa6de8cf99b0 106020 libdrm2-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 252f50ac089faf4f6fd4fae185fcd4853179c7edf22bc15a26c86b060a63feae 30872 libdrm2-udeb_2.4.116-1+toradex1_arm64.udeb
+ dcea412f4b72b982056bde2b200947151d6b859209a9656876fa98d57df03eac 36948 libdrm2_2.4.116-1+toradex1_arm64.deb
+ 8f0f5088968c02e99fcc5149999eed1a3a7be5880d415ad0d9d7af91679e3ad0 12755 libdrm_2.4.116-1+toradex1_arm64.buildinfo
+Files:
+ 90581b5c702f9399fcb5ce4306583066 51792 debug optional libdrm-amdgpu1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ f1d77a27a9d57921d51aa509c585ac1c 20196 libs optional libdrm-amdgpu1_2.4.116-1+toradex1_arm64.deb
+ be8030bf032a1b839ae728d123ec9970 7268 libs optional libdrm-common_2.4.116-1+toradex1_all.deb
+ 53eb8b4b703074a0b46248ff102720c7 256472 libdevel optional libdrm-dev_2.4.116-1+toradex1_arm64.deb
+ add2e729640b5c36bc013a6bdfd4c041 25500 debug optional libdrm-etnaviv1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ d403e208d4b147c5f4433da06a08b4d7 13504 libs optional libdrm-etnaviv1_2.4.116-1+toradex1_arm64.deb
+ 05262a8a83ebc44401198c4fc82ac92f 50224 debug optional libdrm-freedreno1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 487b986c51afc0dffd5207e6be8fa7eb 20132 libs optional libdrm-freedreno1_2.4.116-1+toradex1_arm64.deb
+ 8e451bf7d089b1ad3303397244c2c9fd 39628 debug optional libdrm-nouveau2-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 777d401f0ff586f9061ae3994babc3e9 18296 libs optional libdrm-nouveau2_2.4.116-1+toradex1_arm64.deb
+ f07e413a98b04b6a88485faf0da9e504 46072 debug optional libdrm-radeon1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 6479501cb4d735299dec35f23f0be8d2 20692 libs optional libdrm-radeon1_2.4.116-1+toradex1_arm64.deb
+ f56604f3716e68b15483f5a7f88f85d2 19584 debug optional libdrm-tegra0-dbgsym_2.4.116-1+toradex1_arm64.deb
+ d8f16d262716b589a73ab737199aa0cc 10916 libs optional libdrm-tegra0_2.4.116-1+toradex1_arm64.deb
+ ee2e148cb521853c3494b6465f47d523 261212 debug optional libdrm-tests-dbgsym_2.4.116-1+toradex1_arm64.deb
+ eea660dc9f4ae80cc2d88e3fad261503 62484 libs optional libdrm-tests_2.4.116-1+toradex1_arm64.deb
+ 621a74398fd3b2ab27fb064af3d05457 11032 debug optional libdrm-vivante1-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 0a889652f5b6037db696507e6b43d15d 9336 libs optional libdrm-vivante1_2.4.116-1+toradex1_arm64.deb
+ 3217418d230d6cd3c4d654a4dfe30e6f 106020 debug optional libdrm2-dbgsym_2.4.116-1+toradex1_arm64.deb
+ 1c262b985d14351362aabc86a54a61de 30872 debian-installer optional libdrm2-udeb_2.4.116-1+toradex1_arm64.udeb
+ 07c213641a349a3b530f77c791044eb1 36948 libs optional libdrm2_2.4.116-1+toradex1_arm64.deb
+ 7e79d4a08e0eba2b69c5ed0b12bf9f22 12755 libs optional libdrm_2.4.116-1+toradex1_arm64.buildinfo

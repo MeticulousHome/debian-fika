@@ -1,0 +1,12 @@
+[submodule "modules/weston-imx-deb"]
+	path = modules/weston-imx-deb
+	url = git@github.com:MeticulousHome/weston-imx-deb.git
+[submodule "modules/libdrm-imx-deb"]
+	path = modules/libdrm-imx-deb
+	url = https://github.com/MeticulousHome/libdrm-imx-deb
+[submodule "modules/imx-gpu-viv-deb"]
+	path = modules/imx-gpu-viv-deb
+	url = https://github.com/MeticulousHome/imx-gpu-viv-deb
+[submodule "modules/wayland-protocols-imx-deb"]
+	path = modules/wayland-protocols-imx-deb
+	url = https://github.com/MeticulousHome/wayland-protocols-imx-deb

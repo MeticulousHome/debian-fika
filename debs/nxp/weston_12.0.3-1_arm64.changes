@@ -1,0 +1,40 @@
+Format: 1.8
+Date: Mon, 26 Aug 2024 22:02:49 -0300
+Source: weston
+Binary: libweston-12-0 libweston-12-0-dbgsym libweston-12-dev weston weston-dbgsym
+Architecture: arm64
+Version: 12.0.3-1
+Distribution: bookworm
+Urgency: medium
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Changed-By: Leonardo Held  <leonardo.held@toradex.com>
+Description:
+ libweston-12-0 - reference implementation of a wayland compositor (shared libs)
+ libweston-12-dev - reference implementation of a wayland compositor (shared libs)
+ weston     - reference implementation of a wayland compositor
+Changes:
+ weston (12.0.3-1) bookworm; urgency=medium
+ .
+   [ Leonardo Held ]
+   * Import new release 12.0.3
+Checksums-Sha1:
+ de00c08bcb50e0c3b76ebd1825898c8e952cd9cc 1584020 libweston-12-0-dbgsym_12.0.3-1_arm64.deb
+ 0cba9718042eec3dd1198f513abf374c10c44af4 295176 libweston-12-0_12.0.3-1_arm64.deb
+ bba0db1c2de6d4c58fd1cba56248a075c70be2e3 41120 libweston-12-dev_12.0.3-1_arm64.deb
+ d7f9871fb59f711f67018ee70becddb1bf4c8326 5162720 weston-dbgsym_12.0.3-1_arm64.deb
+ a52c57a2d17566e369064bfa7f0ad379de2baae8 16013 weston_12.0.3-1_arm64.buildinfo
+ 855ca6eb1717e86214ede0c3ab4fe8d43b39c398 838212 weston_12.0.3-1_arm64.deb
+Checksums-Sha256:
+ dbf72c8b619015109df846c7ef2189e2373b62b671188d8c5e418171c5ac22e4 1584020 libweston-12-0-dbgsym_12.0.3-1_arm64.deb
+ 1d993d59cb74479eb035d662df5d7f2de77ee1207b32a880a0fff8aaa6463515 295176 libweston-12-0_12.0.3-1_arm64.deb
+ ad2267b26da60c85f308dafb5554dca61218ed20238ccc23a2aa50f0cc70b301 41120 libweston-12-dev_12.0.3-1_arm64.deb
+ 2bad8e042889c3894bf8f65de7383aac50af8bee5f1e942e90aa44ffee8558d8 5162720 weston-dbgsym_12.0.3-1_arm64.deb
+ d2f1ed4831dfb760a25abcb45abc9b2b95fcf98e5adfdbafa5fd5bb67d17b541 16013 weston_12.0.3-1_arm64.buildinfo
+ 9685649e647b19d956230afef9942ec7f06ea5b015c7718f16090c128a463d95 838212 weston_12.0.3-1_arm64.deb
+Files:
+ 6fbaa0ef5af29d737a88fbef01746515 1584020 debug optional libweston-12-0-dbgsym_12.0.3-1_arm64.deb
+ 2e09734f735ecadb32d85e4f15a7d6f3 295176 libs optional libweston-12-0_12.0.3-1_arm64.deb
+ e5d86dd5a66ff184a26328b6cdcec23c 41120 libdevel optional libweston-12-dev_12.0.3-1_arm64.deb
+ f0b4951cac7ca4797fa4d51e5281572b 5162720 debug optional weston-dbgsym_12.0.3-1_arm64.deb
+ bd2a19dd0a9a757483096ac87136ad1c 16013 x11 optional weston_12.0.3-1_arm64.buildinfo
+ 8a06b1647da33ecb6c7585ba7b291985 838212 x11 optional weston_12.0.3-1_arm64.deb

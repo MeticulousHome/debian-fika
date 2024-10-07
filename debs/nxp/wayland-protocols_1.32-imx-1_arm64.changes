@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Fri, 04 Oct 2024 15:38:00 +0200
+Source: wayland-protocols
+Binary: wayland-protocols-imx
+Architecture: all
+Version: 1.32-imx-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Changed-By: Mimoja <mimoja@meticuloushome.com>
+Description:
+ wayland-protocols-imx - wayland compositor protocols
+Changes:
+ wayland-protocols (1.32-imx-1) unstable; urgency=medium
+ .
+   * Convert to IMX downstream release
+Checksums-Sha1:
+ d98637710008286078a6c0d934a4849742ed2b11 80568 wayland-protocols-imx_1.32-imx-1_all.deb
+ 4f60b1087f8ac95713fc2c7b8814700f7378fdbb 5825 wayland-protocols_1.32-imx-1_arm64.buildinfo
+Checksums-Sha256:
+ 995d0de5a5ebe164b85282f0a9b52566a396fd7ea0a5488dcca7717e1754e817 80568 wayland-protocols-imx_1.32-imx-1_all.deb
+ 85694917ee71d5bb7dfe7066fd5e8783b58492716ce8965734e957dd78c69e6f 5825 wayland-protocols_1.32-imx-1_arm64.buildinfo
+Files:
+ d0ce2a1a0fecdb64b1967161b6581208 80568 libdevel optional wayland-protocols-imx_1.32-imx-1_all.deb
+ 01a521ee6e3b8b5d53ccf65faa947673 5825 x11 optional wayland-protocols_1.32-imx-1_arm64.buildinfo

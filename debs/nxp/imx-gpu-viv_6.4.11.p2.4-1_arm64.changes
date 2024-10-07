@@ -1,0 +1,33 @@
+Format: 1.8
+Date: Tue, 29 Jul 2024 13:33:36 -0300
+Source: imx-gpu-viv
+Binary: imx-gpu-viv-tools imx-gpu-viv-wayland imx-gpu-viv-wayland-dev
+Architecture: arm64
+Version: 6.4.11.p2.4-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Abdur Rehman <abdur.rehman@toradex.com>
+Changed-By: Leonardo Hed <leonardo.held@toradex.com>
+Description:
+ imx-gpu-viv-tools - Vivante Tools
+ imx-gpu-viv-wayland - Vivante Wayland binaries
+ imx-gpu-viv-wayland-dev - Development files for imx-gpu-viv-wayland
+Changes:
+ imx-gpu-viv (6.4.11.p2.4-1) UNRELEASED; urgency=medium
+ .
+   * Bump to v6.4.11.p2.4
+Checksums-Sha1:
+ ec08daee8d1dd981925686fa884220460c906f70 4848 imx-gpu-viv-tools_6.4.11.p2.4-1_arm64.deb
+ 49c33d4159cec093ad218a6cda779cc95b3bca44 547664 imx-gpu-viv-wayland-dev_6.4.11.p2.4-1_arm64.deb
+ ad5caee4ea63ebee2e521f0091cda7d438c52184 10335420 imx-gpu-viv-wayland_6.4.11.p2.4-1_arm64.deb
+ bfb70a82ffbd21cb4ca81a79870eecd5c0cd1833 6254 imx-gpu-viv_6.4.11.p2.4-1_arm64.buildinfo
+Checksums-Sha256:
+ 12ac72172972bd11e24045fec7e3183cda478f2ccaa193427e22e159f555ec40 4848 imx-gpu-viv-tools_6.4.11.p2.4-1_arm64.deb
+ 6d766c5812202d005072714ec3301d3b89d8332886b1b4bda2193520d83cd2a7 547664 imx-gpu-viv-wayland-dev_6.4.11.p2.4-1_arm64.deb
+ d2a7fbda3151a5827f555516e4176e6c6890c8a189a5b1ab42a3f5fadf4c25b1 10335420 imx-gpu-viv-wayland_6.4.11.p2.4-1_arm64.deb
+ aaf3b9bdb9e74c702080d07f23631d4b7336315862bd16874e7dd4d4cff4e932 6254 imx-gpu-viv_6.4.11.p2.4-1_arm64.buildinfo
+Files:
+ 667bb84c136ec93196f42a4593832090 4848 devel optional imx-gpu-viv-tools_6.4.11.p2.4-1_arm64.deb
+ 533f064d97ee75a3b56067029898e69c 547664 libdevel optional imx-gpu-viv-wayland-dev_6.4.11.p2.4-1_arm64.deb
+ bc35d6bc52b2e25b13cd5a666b321670 10335420 libs optional imx-gpu-viv-wayland_6.4.11.p2.4-1_arm64.deb
+ f9780d51b4760c06f80a90879c446ea0 6254 libs optional imx-gpu-viv_6.4.11.p2.4-1_arm64.buildinfo
