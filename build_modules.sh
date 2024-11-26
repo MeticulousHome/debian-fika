@@ -9,7 +9,7 @@ if (($EUID != 0)); then
     exit
 fi
 
-docker build -t ${DOCKER_IMAGE} .
+docker build --platform arm64 -t ${DOCKER_IMAGE} .
 
 # Build the imx-gpu-viv deb package
 git -C ./modules/imx-gpu-viv-deb clean -xfd
