@@ -79,6 +79,8 @@ systemd-nspawn -D ${ROOTFS_BASE}/ --bind debs:/opt/debs bash -c "apt install -y 
 	/opt/debs/nxp/libdrm2_*.deb \
 	/opt/debs/nxp/libg2d-viv_*.deb \
 	/opt/debs/nxp/libweston-12-0_*.deb \
+	/opt/debs/nxp/libaml-0.3.0_*.deb \
+	/opt/debs/nxp/libneatvnc0-0.6.0_*.deb \
 	/opt/debs/nxp/wayland-protocols-imx_*.deb \
 	/opt/debs/nxp/weston_*.deb"
 

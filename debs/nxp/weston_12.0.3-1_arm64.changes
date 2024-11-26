@@ -1,7 +1,7 @@
 Format: 1.8
 Date: Mon, 26 Aug 2024 22:02:49 -0300
 Source: weston
-Binary: libweston-12-0 libweston-12-0-dbgsym libweston-12-dev weston weston-dbgsym
+Binary: libaml-0.3.0 libaml-0.3.0-dbgsym libaml-0.3.0-dev libneatvnc-0.6.0-dev libneatvnc0-0.6.0 libneatvnc0-0.6.0-dbgsym libweston-12-0 libweston-12-0-dbgsym libweston-12-dev weston weston-dbgsym
 Architecture: arm64
 Version: 12.0.3-1
 Distribution: bookworm
@@ -9,6 +9,10 @@ Urgency: medium
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Changed-By: Leonardo Held  <leonardo.held@toradex.com>
 Description:
+ libaml-0.3.0 - Andri's Main Loop library v3 (shared library)
+ libaml-0.3.0-dev - Andri's Main Loop library v0.3.0 (development files)
+ libneatvnc-0.6.0-dev - Fast and neat VNC server library (development files)
+ libneatvnc0-0.6.0 - Fast and neat VNC server library (shared library)
  libweston-12-0 - reference implementation of a wayland compositor (shared libs)
  libweston-12-dev - reference implementation of a wayland compositor (shared libs)
  weston     - reference implementation of a wayland compositor
@@ -18,23 +22,41 @@ Changes:
    [ Leonardo Held ]
    * Import new release 12.0.3
 Checksums-Sha1:
- de00c08bcb50e0c3b76ebd1825898c8e952cd9cc 1584020 libweston-12-0-dbgsym_12.0.3-1_arm64.deb
- 0cba9718042eec3dd1198f513abf374c10c44af4 295176 libweston-12-0_12.0.3-1_arm64.deb
- bba0db1c2de6d4c58fd1cba56248a075c70be2e3 41120 libweston-12-dev_12.0.3-1_arm64.deb
- 4dcc104df3445fb4b68b32fa4c916f58b7363015 5163104 weston-dbgsym_12.0.3-1_arm64.deb
- 6d2951938bc7586b451ff357f52afd9510739548 16013 weston_12.0.3-1_arm64.buildinfo
- 943ca09b2f6fdd4de764398673b0ae459d852a7f 838236 weston_12.0.3-1_arm64.deb
+ d0b93289e656676a90f0acc61175adf46217e0b3 29628 libaml-0.3.0-dbgsym_12.0.3-1_arm64.deb
+ ea189e01d825f7b8a728edef83c996c92e41c4e7 12420 libaml-0.3.0-dev_12.0.3-1_arm64.deb
+ 1a0f598612892aeef88a847d91918105f04091a5 17748 libaml-0.3.0_12.0.3-1_arm64.deb
+ 17fef84fb2b9d9f147df0982661643c141e9d9d3 12296 libneatvnc-0.6.0-dev_12.0.3-1_arm64.deb
+ 40c2b0b71fee17f620e839b856757d41a1d90b7c 112232 libneatvnc0-0.6.0-dbgsym_12.0.3-1_arm64.deb
+ 6b54a3bd448f3049c4bc53b7bff67cddf7c64e51 35140 libneatvnc0-0.6.0_12.0.3-1_arm64.deb
+ a4ec279ed9f730d098a14ebc81eeac48691d7c23 1824752 libweston-12-0-dbgsym_12.0.3-1_arm64.deb
+ 5d8424f1ace55c0c6640c93016bf3346034127c4 323384 libweston-12-0_12.0.3-1_arm64.deb
+ c30a85d9f1c58699250e576ea97c67ed73bf1cbf 41652 libweston-12-dev_12.0.3-1_arm64.deb
+ 9a9a9ebf6a57aad62ee930455da5782c06a2415b 5156492 weston-dbgsym_12.0.3-1_arm64.deb
+ aff219f739df9267a719d05898a785a3dde38679 17798 weston_12.0.3-1_arm64.buildinfo
+ e73f8c126f9db50cbaf8f90f4402b11efdc35270 841884 weston_12.0.3-1_arm64.deb
 Checksums-Sha256:
- dbf72c8b619015109df846c7ef2189e2373b62b671188d8c5e418171c5ac22e4 1584020 libweston-12-0-dbgsym_12.0.3-1_arm64.deb
- 1d993d59cb74479eb035d662df5d7f2de77ee1207b32a880a0fff8aaa6463515 295176 libweston-12-0_12.0.3-1_arm64.deb
- ad2267b26da60c85f308dafb5554dca61218ed20238ccc23a2aa50f0cc70b301 41120 libweston-12-dev_12.0.3-1_arm64.deb
- bc2f5eb1d719554ed77b8a5285dd779e9d31982d785c57ed1e9931e2f82f1b9e 5163104 weston-dbgsym_12.0.3-1_arm64.deb
- a00d69cb2025ddf4b469e67596b9dc043ad3cbc5528bfae1b9bf5a252f252a5b 16013 weston_12.0.3-1_arm64.buildinfo
- da29576957f0ca96b3f774f71658d836951145e68341576d27a06d84896ba15d 838236 weston_12.0.3-1_arm64.deb
+ 38a6462d68bde8e77aad2af289437cdad7cdc3e214eeaba0ec1fb3ccd8f504e9 29628 libaml-0.3.0-dbgsym_12.0.3-1_arm64.deb
+ 6da534e43674b7b01b4588c7b596231859d24a0170cbcc1be26b1ecc2166918f 12420 libaml-0.3.0-dev_12.0.3-1_arm64.deb
+ 93407c7ed3f45d48a625b3f076aa796d2769f6b8dc3b928822220df0fbb9c3f8 17748 libaml-0.3.0_12.0.3-1_arm64.deb
+ d5025f440d2ed1931c959c162a366740fd7c65019f0c42596f7dfe8262727ee9 12296 libneatvnc-0.6.0-dev_12.0.3-1_arm64.deb
+ 16631deeeab3f4a89c3ba692f3535c1126ca92310475d39c156f2c48617ac60a 112232 libneatvnc0-0.6.0-dbgsym_12.0.3-1_arm64.deb
+ 03f6c9b18f00a64d818996f0e9ae758d43f4bb8d53ddd69ebc5c0ccd515f0591 35140 libneatvnc0-0.6.0_12.0.3-1_arm64.deb
+ 0db3c1c8acbbd4a027527df9cea51a7a3644e9801cb5fff6a9cfcb19e51fe785 1824752 libweston-12-0-dbgsym_12.0.3-1_arm64.deb
+ 67bbdf2b0b33cdb5f3dfd36b16716d588222c7141e0362dd99ca43e60bbac8ca 323384 libweston-12-0_12.0.3-1_arm64.deb
+ c3279e792bab9a886af21b547b88db88d24135fc3193a9dedb8d720b2b5f6827 41652 libweston-12-dev_12.0.3-1_arm64.deb
+ 408c52505035e12b0c43d440eaf3a9bc4c6d123ac16b40c30d530de8a88953db 5156492 weston-dbgsym_12.0.3-1_arm64.deb
+ f151bed8cd5f3bdc546b35618e6508a7648d16159403986e0fd7f17799edc47d 17798 weston_12.0.3-1_arm64.buildinfo
+ 70a43ad0b3860a5771a9abe13a4672762d2ccd9161c4fd21347c032bac0229cd 841884 weston_12.0.3-1_arm64.deb
 Files:
- 6fbaa0ef5af29d737a88fbef01746515 1584020 debug optional libweston-12-0-dbgsym_12.0.3-1_arm64.deb
- 2e09734f735ecadb32d85e4f15a7d6f3 295176 libs optional libweston-12-0_12.0.3-1_arm64.deb
- e5d86dd5a66ff184a26328b6cdcec23c 41120 libdevel optional libweston-12-dev_12.0.3-1_arm64.deb
- 6885cc493776f3938df4b79ec9fe30ad 5163104 debug optional weston-dbgsym_12.0.3-1_arm64.deb
- 9ebac0bfe19623bd23c813c255f99854 16013 x11 optional weston_12.0.3-1_arm64.buildinfo
- 6cd0e0e04066223939ad7811fc8b322c 838236 x11 optional weston_12.0.3-1_arm64.deb
+ 1c49b718f005aac93a92a833efb5aeaa 29628 debug optional libaml-0.3.0-dbgsym_12.0.3-1_arm64.deb
+ 44619f55a4974fe2384637144e8c3669 12420 libdevel optional libaml-0.3.0-dev_12.0.3-1_arm64.deb
+ 09c32a1b79f14348a7f8a99f3d7d7dd2 17748 libdevel optional libaml-0.3.0_12.0.3-1_arm64.deb
+ 8c93ddb20d5bf9da61b80a1733298945 12296 libdevel optional libneatvnc-0.6.0-dev_12.0.3-1_arm64.deb
+ 09d22b71e6307e3526b91ed4b44193e8 112232 debug optional libneatvnc0-0.6.0-dbgsym_12.0.3-1_arm64.deb
+ 8b1d057c5c1d99fc42b7d50c4ec5c3f5 35140 libdevel optional libneatvnc0-0.6.0_12.0.3-1_arm64.deb
+ 95c4a01aa0c2e16ba5ab1e9411280644 1824752 debug optional libweston-12-0-dbgsym_12.0.3-1_arm64.deb
+ c1c42620d1d01cd530fbd6159e9e4083 323384 libs optional libweston-12-0_12.0.3-1_arm64.deb
+ e9a475ff8b286228e6c7985df63e04c7 41652 libdevel optional libweston-12-dev_12.0.3-1_arm64.deb
+ f422fa7cafd927a1f5edbaf75ec942b0 5156492 debug optional weston-dbgsym_12.0.3-1_arm64.deb
+ 10328320130c48190c1fba576440fb59 17798 x11 optional weston_12.0.3-1_arm64.buildinfo
+ 29e5c208ed69057f14888820279f8ba8 841884 x11 optional weston_12.0.3-1_arm64.deb
