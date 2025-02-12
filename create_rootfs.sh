@@ -72,18 +72,6 @@ systemd-nspawn -D ${ROOTFS_BASE}/ --bind debs:/opt/debs apt install -y \
 	/opt/debs/variscite/imx-firmware-sdma_8.8-var02_arm64.deb \
 	/opt/debs/variscite/imx-firmware-vpu_8.8-var02_arm64.deb
 
-systemd-nspawn -D ${ROOTFS_BASE}/ --bind debs:/opt/debs bash -c "apt install -y \
-	/opt/debs/nxp/imx-gpu-viv-wayland*.deb \
-	/opt/debs/nxp/libdrm-common_*.deb \
-	/opt/debs/nxp/libdrm-vivante1_*.deb \
-	/opt/debs/nxp/libdrm2_*.deb \
-	/opt/debs/nxp/libg2d-viv_*.deb \
-	/opt/debs/nxp/libweston-12-0_*.deb \
-	/opt/debs/nxp/libaml-0.3.0_*.deb \
-	/opt/debs/nxp/libneatvnc0-0.6.0_*.deb \
-	/opt/debs/nxp/wayland-protocols-imx_*.deb \
-	/opt/debs/nxp/weston_*.deb"
-
 systemd-nspawn -D ${ROOTFS_BASE}/ ln -sf /bin/busybox /bin/usleep
 
 rm -f ${ROOTFS_BASE}-base.tar.gz
