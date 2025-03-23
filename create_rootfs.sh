@@ -24,6 +24,7 @@ bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpa
 iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
 libubootenv-tool,i2c-tools,\
 libdrm2,libdrm-common,libdrm-etnaviv1,weston,wayland-protocols,xwayland,\
+oomd,\
 ${EXTRA_PACKAGES}"
 
 debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" bookworm ${ROOTFS_BASE}/
