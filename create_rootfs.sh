@@ -15,7 +15,7 @@ mkdir ${ROOTFS_BASE}
 
 if [ -n "${EXTRA_PACKAGES}" ]; then
 	echo "Extra packages: ${EXTRA_PACKAGES}"
-	EXTRA_PACKAGES=$(echo ${EXTRA_PACKAGES} | tr ' ' ',')
+	EXTRA_PACKAGES=$(echo ",${EXTRA_PACKAGES}" | tr ' ' ',')
 fi
 
 INCLUDE_PACKAGES="locales,openssh-server,ethtool,hostapd,ifupdown,wpasupplicant,systemd,\
@@ -23,7 +23,7 @@ base-passwd,busybox,dbus,init,login,util-linux,nano,ntp,dosfstools,\
 net-tools,network-manager,alsa-utils,usbutils,gpiod,iperf3,bluetooth,bluez,\
 bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpam-systemd,\
 iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
-libubootenv-tool,i2c-tools,xwayland${EXTRA_PACKAGES}"
+libubootenv-tool,i2c-tools,xwayland,oomd${EXTRA_PACKAGES}"
 
 debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" ${DISTRO} ${ROOTFS_BASE}/
 
