@@ -27,6 +27,8 @@ libdrm2,libdrm-common,libdrm-etnaviv1,weston,wayland-protocols,xwayland,\
 systemd-oomd,\
 ${EXTRA_PACKAGES}"
 
+BACKPORT_PACKAGES="mesa-va-drivers"
+
 debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" bookworm ${ROOTFS_BASE}/
 
 cp /usr/bin/qemu-aarch64-static ${ROOTFS_BASE}/bin/
@@ -39,6 +41,7 @@ echo imx8mn-var-som > ${ROOTFS_BASE}/etc/hostname
 
 systemd-nspawn -D ${ROOTFS_BASE}/ apt update
 systemd-nspawn -D ${ROOTFS_BASE}/ apt dist-upgrade -y
+systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y -t bookworm-backports ${BACKPORT_PACKAGES}
 
 sed -i -e 's/#PermitRootLogin.*/PermitRootLogin\tyes/g' ${ROOTFS_BASE}/etc/ssh/sshd_config
 
