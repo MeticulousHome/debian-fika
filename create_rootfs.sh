@@ -41,7 +41,6 @@ echo imx8mn-var-som > ${ROOTFS_BASE}/etc/hostname
 
 systemd-nspawn -D ${ROOTFS_BASE}/ apt update
 systemd-nspawn -D ${ROOTFS_BASE}/ apt dist-upgrade -y
-systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y -t bookworm-backports ${BACKPORT_PACKAGES}
 
 sed -i -e 's/#PermitRootLogin.*/PermitRootLogin\tyes/g' ${ROOTFS_BASE}/etc/ssh/sshd_config
 
@@ -79,6 +78,11 @@ systemd-nspawn -D ${ROOTFS_BASE}/ --bind debs:/opt/debs apt install -y \
 	/opt/debs/variscite/imx-firmware-vpu_8.8-var02_arm64.deb
 
 systemd-nspawn -D ${ROOTFS_BASE}/ ln -sf /bin/busybox /bin/usleep
+
+systemd-nspawn -D ${ROOTFS_BASE}/ apt update
+echo "deb http://deb.debian.org/debian bookworm-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
+echo "deb-src http://deb.debian.org/debian bookworm-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
+systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y -t bookworm-backports ${BACKPORT_PACKAGES}
 
 rm -f ${ROOTFS_BASE}-base.tar.gz
 pushd ${ROOTFS_BASE}
