@@ -27,7 +27,7 @@ libdrm2,libdrm-common,libdrm-etnaviv1,weston,wayland-protocols,xwayland,\
 systemd-oomd,\
 ${EXTRA_PACKAGES}"
 
-BACKPORT_PACKAGES="mesa-va-drivers"
+BACKPORT_PACKAGES="mesa-va-drivers gpiod"
 
 debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" bookworm ${ROOTFS_BASE}/
 
