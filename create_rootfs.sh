@@ -18,7 +18,7 @@ if [ -n "${EXTRA_PACKAGES}" ]; then
 fi
 
 INCLUDE_PACKAGES="locales,openssh-server,ethtool,hostapd,ifupdown,wpasupplicant,systemd,\
-base-passwd,busybox,dbus,init,login,util-linux,nano,ntp,dosfstools,\
+base-passwd,busybox,bc,dbus,init,login,util-linux,nano,ntp,dosfstools,\
 net-tools,network-manager,alsa-utils,usbutils,gpiod,iperf3,bluetooth,bluez,\
 bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpam-systemd,\
 iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
