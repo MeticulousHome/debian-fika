@@ -24,7 +24,7 @@ bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpa
 iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
 libubootenv-tool,i2c-tools,\
 libdrm2,libdrm-common,libdrm-etnaviv1,weston,wayland-protocols,xwayland,\
-systemd-oomd,fonts-noto-color-emoji,pv,htop,systemd-timesyncd,wireless-regdb,pwgen,\
+systemd-oomd,pv,htop,wireless-regdb,pwgen,\
 ${EXTRA_PACKAGES}"
 
 BACKPORT_PACKAGES="mesa-va-drivers gpiod"
