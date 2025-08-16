@@ -8,6 +8,7 @@ fi
 
 USERNAME=meticulous
 ROOTFS_BASE=rootfs
+DISTRO=bookworm
 
 rm -rf ${ROOTFS_BASE}
 mkdir ${ROOTFS_BASE}
@@ -29,7 +30,7 @@ ${EXTRA_PACKAGES}"
 
 BACKPORT_PACKAGES="mesa-va-drivers gpiod"
 
-debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" bookworm ${ROOTFS_BASE}/
+debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" ${DISTRO} ${ROOTFS_BASE}/
 
 cp /usr/bin/qemu-aarch64-static ${ROOTFS_BASE}/bin/
 systemd-nspawn -D ${ROOTFS_BASE}/ /debootstrap/debootstrap --second-stage --verbose
