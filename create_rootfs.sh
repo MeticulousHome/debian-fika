@@ -1,26 +1,44 @@
 #!/bin/bash
 set -eo pipefail
 
+print_red() {
+	echo -e "\033[0;31m$1\033[0m"
+}
+ 
 if (($EUID != 0)); then
-    echo "Please run as root"
+    print_red "Please run as root"
     exit
 fi
 
+
 USERNAME=meticulous
 ROOTFS_BASE=rootfs
-DISTRO=bookworm
+DISTRO=trixie
 
-rm -rf ${ROOTFS_BASE}
-mkdir ${ROOTFS_BASE}
+
+for arg in "$@"; do
+	if [ "$arg" == "--inplace" ]; then
+		INPLACE=1
+		print_red "Using inplace rootfs: ${ROOTFS_BASE}"
+		break
+	fi
+done
+
+if [ -z ${INPLACE} ]; then
+	print_red "Creating new rootfs: ${ROOTFS_BASE}"
+	rm -rf ${ROOTFS_BASE}
+	mkdir ${ROOTFS_BASE}
+fi
+
 
 if [ -n "${EXTRA_PACKAGES}" ]; then
-	echo "Extra packages: ${EXTRA_PACKAGES}"
+	print_red "Extra packages: ${EXTRA_PACKAGES}"
 	EXTRA_PACKAGES=$(echo ${EXTRA_PACKAGES} | tr ' ' ',')
 fi
 
 INCLUDE_PACKAGES="locales,openssh-server,ethtool,hostapd,ifupdown,wpasupplicant,systemd,\
-base-passwd,busybox,bc,dbus,init,login,util-linux,nano,ntp,dosfstools,\
-net-tools,network-manager,alsa-utils,usbutils,gpiod,iperf3,bluetooth,bluez,\
+base-passwd,busybox,bc,dbus,init,login,util-linux,nano,dosfstools,\
+net-tools,network-manager,alsa-utils,usbutils,gpiod,bluetooth,bluez,\
 bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpam-systemd,\
 iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
 libubootenv-tool,i2c-tools,\
@@ -28,20 +46,27 @@ libdrm2,libdrm-common,libdrm-etnaviv1,weston,wayland-protocols,xwayland,\
 systemd-oomd,pv,htop,wireless-regdb,pwgen,\
 ${EXTRA_PACKAGES}"
 
-BACKPORT_PACKAGES="mesa-va-drivers gpiod"
+INCLUDE_PACKAGES=$(echo ${INCLUDE_PACKAGES} | tr ',' ' ')
 
-debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" ${DISTRO} ${ROOTFS_BASE}/
+BACKPORT_PACKAGES=""
 
+print_red "Starting rootfs creation..."
+debootstrap --verbose  --foreign --arch arm64 --variant=minbase --include "console-setup,locales,util-linux" --merged-usr ${DISTRO} ${ROOTFS_BASE}/
+
+print_red "Running second stage of debootstrap..."
 cp /usr/bin/qemu-aarch64-static ${ROOTFS_BASE}/bin/
 systemd-nspawn -D ${ROOTFS_BASE}/ /debootstrap/debootstrap --second-stage --verbose
 rm -rf ${ROOTFS_BASE}/debootstrap
 
 cp sources.list ${ROOTFS_BASE}/etc/apt/sources.list
-
+sed -i "s/__DISTRO__/${DISTRO}/g" ${ROOTFS_BASE}/etc/apt/sources.list
 echo imx8mn-var-som > ${ROOTFS_BASE}/etc/hostname
 
+print_red "Updating sources..."
 systemd-nspawn -D ${ROOTFS_BASE}/ apt update
 systemd-nspawn -D ${ROOTFS_BASE}/ apt dist-upgrade -y
+print_red "Installing packages..."
+systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y ${INCLUDE_PACKAGES}
 
 sed -i -e 's/#PermitRootLogin.*/PermitRootLogin\tyes/g' ${ROOTFS_BASE}/etc/ssh/sshd_config
 
@@ -80,12 +105,18 @@ systemd-nspawn -D ${ROOTFS_BASE}/ --bind debs:/opt/debs apt install -y \
 
 systemd-nspawn -D ${ROOTFS_BASE}/ ln -sf /bin/busybox /bin/usleep
 
-echo "deb http://deb.debian.org/debian bookworm-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
-echo "deb-src http://deb.debian.org/debian bookworm-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
-systemd-nspawn -D ${ROOTFS_BASE}/ apt update
-systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y -t bookworm-backports ${BACKPORT_PACKAGES}
+if [ ! -z "${BACKPORT_PACKAGES}" ]; then
+	echo "deb http://deb.debian.org/debian ${DISTRO}-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
+	echo "deb-src http://deb.debian.org/debian ${DISTRO}-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
+	systemd-nspawn -D ${ROOTFS_BASE}/ apt update
+	systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y -t bookworm-backports ${BACKPORT_PACKAGES}
+fi
+
+print_red "Compressing rootfs..."
 
 rm -f ${ROOTFS_BASE}-base.tar.gz
 pushd ${ROOTFS_BASE}
 tar cf ../${ROOTFS_BASE}-base.tar.gz -I pigz --exclude=sys --exclude=proc --exclude=dev *
 popd
+
+print_red "Rootfs creation completed: ${ROOTFS_BASE}-base.tar.gz"
