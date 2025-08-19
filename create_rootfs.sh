@@ -41,7 +41,7 @@ base-passwd,busybox,bc,dbus,init,login,util-linux,nano,dosfstools,\
 net-tools,network-manager,alsa-utils,usbutils,gpiod,bluetooth,bluez,\
 bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpam-systemd,\
 iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
-libubootenv-tool,i2c-tools,\
+libubootenv-tool,i2c-tools,e2fsprogs,\
 libdrm2,libdrm-common,libdrm-etnaviv1,weston,wayland-protocols,xwayland,\
 systemd-oomd,pv,htop,wireless-regdb,pwgen,\
 ${EXTRA_PACKAGES}"
