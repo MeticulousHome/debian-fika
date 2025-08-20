@@ -76,9 +76,6 @@ locales locales/default_environment_locale select en_US.UTF-8  \
 openssh-server openssh-server/permit-root-login select true \
 " | debconf-set-selections'
 
-systemd-nspawn -D ${ROOTFS_BASE}/ groupmod pulse --gid 107
-systemd-nspawn -D ${ROOTFS_BASE}/ usermod pulse --uid 107
-
 systemd-nspawn -D ${ROOTFS_BASE}/ useradd -m -G audio -s /bin/bash ${USERNAME} || true
 systemd-nspawn -D ${ROOTFS_BASE}/ usermod -a -G video ${USERNAME}
 systemd-nspawn -D ${ROOTFS_BASE}/ bash -c "echo \\"${USERNAME}:${USERNAME}\\" | chpasswd"
@@ -87,14 +84,8 @@ systemd-nspawn -D ${ROOTFS_BASE}/ bash -c 'echo "root:root" | chpasswd'
 # add users to pulse-access group
 systemd-nspawn -D ${ROOTFS_BASE}/ usermod -a -G pulse-access root
 systemd-nspawn -D ${ROOTFS_BASE}/ usermod -a -G pulse-access ${USERNAME}
-# update pulse home directory
-systemd-nspawn -D ${ROOTFS_BASE}/ usermod -d /var/run/pulse pulse
 
 echo "HandlePowerKey=ignore" >> ${ROOTFS_BASE}/etc/systemd/logind.conf
-
-rm -rf ${ROOTFS_BASE}/etc/systemd/user/sockets.target.wants/pulseaudio.socket
-rm -rf ${ROOTFS_BASE}/etc/systemd/user/default.target.wants/pulseaudio.service
-rm -f ${ROOTFS_BASE}/etc/xdg/autostart/pulseaudio.desktop
 
 # remove pm-utils default scripts we later install wifi / bt pm-utils script
 rm -rf ${ROOTFS_BASE}/usr/lib/pm-utils/sleep.d/
