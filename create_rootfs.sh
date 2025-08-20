@@ -76,6 +76,9 @@ locales locales/default_environment_locale select en_US.UTF-8  \
 openssh-server openssh-server/permit-root-login select true \
 " | debconf-set-selections'
 
+systemd-nspawn -D ${ROOTFS_BASE}/ groupmod pulse --gid 107
+systemd-nspawn -D ${ROOTFS_BASE}/ usermod pulse --uid 107
+
 systemd-nspawn -D ${ROOTFS_BASE}/ useradd -m -G audio -s /bin/bash ${USERNAME} || true
 systemd-nspawn -D ${ROOTFS_BASE}/ usermod -a -G video ${USERNAME}
 systemd-nspawn -D ${ROOTFS_BASE}/ bash -c "echo \\"${USERNAME}:${USERNAME}\\" | chpasswd"
