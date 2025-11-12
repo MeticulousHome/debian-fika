@@ -32,7 +32,11 @@ BACKPORT_PACKAGES="mesa-va-drivers gpiod"
 
 debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" ${DISTRO} ${ROOTFS_BASE}/
 
-cp /usr/bin/qemu-aarch64-static ${ROOTFS_BASE}/bin/
+if [ -e /usr/bin/qemu-aarch64-static ]; then
+  cp /usr/bin/qemu-aarch64-static ${ROOTFS_BASE}/bin/
+else
+  cp /usr/bin/qemu-aarch64 ${ROOTFS_BASE}/bin/
+fi
 systemd-nspawn -D ${ROOTFS_BASE}/ /debootstrap/debootstrap --second-stage --verbose
 rm -rf ${ROOTFS_BASE}/debootstrap
 
