@@ -54,7 +54,13 @@ print_red "Starting rootfs creation..."
 debootstrap --verbose  --foreign --arch arm64 --variant=minbase --include "console-setup,locales,util-linux" --merged-usr ${DISTRO} ${ROOTFS_BASE}/
 
 print_red "Running second stage of debootstrap..."
-cp /usr/bin/qemu-aarch64-static ${ROOTFS_BASE}/bin/
+
+if [ -e /usr/bin/qemu-aarch64-static ]; then
+  cp /usr/bin/qemu-aarch64-static ${ROOTFS_BASE}/bin/
+else
+  cp /usr/bin/qemu-aarch64 ${ROOTFS_BASE}/bin/
+fi
+
 systemd-nspawn -D ${ROOTFS_BASE}/ /debootstrap/debootstrap --second-stage --verbose
 rm -rf ${ROOTFS_BASE}/debootstrap
 
