@@ -19,11 +19,14 @@ if [ -n "${EXTRA_PACKAGES}" ]; then
 fi
 
 INCLUDE_PACKAGES="locales,openssh-server,ethtool,hostapd,ifupdown,wpasupplicant,systemd,\
-base-passwd,busybox,dbus,init,login,util-linux,nano,ntp,dosfstools,\
+base-passwd,busybox,bc,dbus,init,login,util-linux,nano,ntp,dosfstools,\
 net-tools,network-manager,alsa-utils,usbutils,gpiod,iperf3,bluetooth,bluez,\
 bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpam-systemd,\
 iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
-libubootenv-tool,i2c-tools,xwayland,oomd${EXTRA_PACKAGES}"
+libubootenv-tool,i2c-tools,xwayland,systemd-oomd$,fonts-noto-color-emoji,pv,htop,systemd-timesyncd,wireless-regdb,pwgen,\
+{EXTRA_PACKAGES}"
+
+BACKPORT_PACKAGES="gpiod"
 
 debootstrap --verbose  --foreign --arch arm64 --variant=minbase --merged-usr --include "${INCLUDE_PACKAGES}" ${DISTRO} ${ROOTFS_BASE}/
 
@@ -71,6 +74,7 @@ echo imx8mn-var-som > ${ROOTFS_BASE}/etc/hostname
 cp ${ROOTFS_BASE}/etc/os-release ${ROOTFS_BASE}/etc/os-release.bak
 systemd-nspawn -D ${ROOTFS_BASE}/ apt update
 systemd-nspawn -D ${ROOTFS_BASE}/ apt dist-upgrade -y
+systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y -t ${DISTRO}-backports ${BACKPORT_PACKAGES}
 cp ${ROOTFS_BASE}/etc/os-release.bak ${ROOTFS_BASE}/etc/os-release
 
 sed -i -e 's/#PermitRootLogin.*/PermitRootLogin\tyes/g' ${ROOTFS_BASE}/etc/ssh/sshd_config
