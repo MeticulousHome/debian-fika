@@ -84,10 +84,10 @@ systemd-nspawn -D ${ROOTFS_BASE}/ --bind debs:/opt/debs apt install -y \
 
 systemd-nspawn -D ${ROOTFS_BASE}/ ln -sf /bin/busybox /bin/usleep
 
-echo "deb http://deb.debian.org/debian bookworm-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
-echo "deb-src http://deb.debian.org/debian bookworm-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
+echo "deb http://deb.debian.org/debian ${DISTRO}-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
+echo "deb-src http://deb.debian.org/debian ${DISTRO}-backports main non-free-firmware" >> ${ROOTFS_BASE}/etc/apt/sources.list
 systemd-nspawn -D ${ROOTFS_BASE}/ apt update
-systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y -t bookworm-backports ${BACKPORT_PACKAGES}
+systemd-nspawn -D ${ROOTFS_BASE}/ apt install -y -t ${DISTRO}-backports ${BACKPORT_PACKAGES}
 
 rm -f ${ROOTFS_BASE}-base.tar.gz
 pushd ${ROOTFS_BASE}
