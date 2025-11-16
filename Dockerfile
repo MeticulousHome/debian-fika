@@ -24,10 +24,8 @@ COPY modules/imx-gpu-viv-deb/debian/control /tmp/control
 RUN DEBIAN_FRONTEND=noninteractive mk-build-deps -r -i /tmp/control \
     -t 'apt-get -y -o Debug::pkgProblemResolver=yes --no-install-recommends'
 
-COPY modules/libg2d-viv-deb/debian/control /tmp/control
-RUN DEBIAN_FRONTEND=noninteractive mk-build-deps -r -i /tmp/control \
-    -t 'apt-get -y -o Debug::pkgProblemResolver=yes --no-install-recommends'
-
+# For libg2d-viv
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -o Debug::pkgProblemResolver=yes --no-install-recommends  ca-certificates debhelper-compat=13 wget
 
 RUN echo "\
 deb http://deb.debian.org/debian bookworm main contrib non-free-firmware \n\
