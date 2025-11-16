@@ -35,12 +35,43 @@ fi
 systemd-nspawn -D ${ROOTFS_BASE}/ /debootstrap/debootstrap --second-stage --verbose
 rm -rf ${ROOTFS_BASE}/debootstrap
 
-cp sources.list ${ROOTFS_BASE}/etc/apt/sources.list
+echo "Installing packages"
+cat << EOF > ${ROOTFS_BASE}/etc/apt/sources.list
+deb http://deb.debian.org/debian ${DISTRO} main non-free-firmware
+deb-src http://deb.debian.org/debian ${DISTRO} main non-free-firmware
+
+deb http://security.debian.org/debian-security ${DISTRO}-security main non-free-firmware
+deb-src http://security.debian.org/debian-security ${DISTRO}-security main non-free-firmware
+
+deb http://deb.debian.org/debian ${DISTRO}-updates main non-free-firmware
+deb-src http://deb.debian.org/debian ${DISTRO}-updates main non-free-firmware
+
+deb http://deb.debian.org/debian ${DISTRO}-backports main non-free-firmware
+deb-src http://deb.debian.org/debian ${DISTRO}-backports main non-free-firmware
+EOF
+
+# Add Trixie source with low priority for libc updates
+cat << EOF > ${ROOTFS_BASE}/etc/apt/sources.list.d/trixie.list
+deb http://deb.debian.org/debian trixie main non-free-firmware
+deb-src http://deb.debian.org/debian trixie main non-free-firmware
+EOF
+
+cat << EOF > ${ROOTFS_BASE}/etc/apt/preferences.d/99-pin-trixie
+Package: *
+Pin: release n=trixie
+Pin-Priority: 1
+
+Package: base-files libc-bin libc6 libc-l10n locales
+Pin: release n=trixie
+Pin-Priority: 1000
+EOF
 
 echo imx8mn-var-som > ${ROOTFS_BASE}/etc/hostname
 
+cp ${ROOTFS_BASE}/etc/os-release ${ROOTFS_BASE}/etc/os-release.bak
 systemd-nspawn -D ${ROOTFS_BASE}/ apt update
 systemd-nspawn -D ${ROOTFS_BASE}/ apt dist-upgrade -y
+cp ${ROOTFS_BASE}/etc/os-release.bak ${ROOTFS_BASE}/etc/os-release
 
 sed -i -e 's/#PermitRootLogin.*/PermitRootLogin\tyes/g' ${ROOTFS_BASE}/etc/ssh/sshd_config
 
