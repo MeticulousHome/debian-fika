@@ -23,8 +23,8 @@ base-passwd,busybox,bc,dbus,init,login,util-linux,nano,ntp,dosfstools,\
 net-tools,network-manager,alsa-utils,usbutils,gpiod,iperf3,bluetooth,bluez,\
 bluez-tools,bluez-obexd,pmount,pm-utils,rng-tools-debian,dbus-user-session,libpam-systemd,\
 iptables,seatd,pulseaudio,parted,avahi-daemon,zstd,nginx,ssl-cert,exfatprogs,\
-libubootenv-tool,i2c-tools,xwayland,systemd-oomd$,fonts-noto-color-emoji,pv,htop,systemd-timesyncd,wireless-regdb,pwgen,\
-{EXTRA_PACKAGES}"
+libubootenv-tool,i2c-tools,xwayland,systemd-oomd,fonts-noto-color-emoji,pv,htop,systemd-timesyncd,wireless-regdb,pwgen,\
+${EXTRA_PACKAGES}"
 
 BACKPORT_PACKAGES="gpiod"
 
