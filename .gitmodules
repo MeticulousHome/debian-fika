@@ -10,3 +10,6 @@
 [submodule "modules/wayland-protocols-imx-deb"]
 	path = modules/wayland-protocols-imx-deb
 	url = https://github.com/MeticulousHome/wayland-protocols-imx-deb
+[submodule "modules/libg2d-viv-deb"]
+	path = modules/libg2d-viv-deb
+	url = https://github.com/MeticulousHome/libg2d-viv-deb
