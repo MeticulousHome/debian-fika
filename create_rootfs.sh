@@ -109,11 +109,6 @@ rm -rf ${ROOTFS_BASE}/usr/lib/pm-utils/sleep.d/
 rm -rf ${ROOTFS_BASE}/usr/lib/pm-utils/module.d/
 rm -rf ${ROOTFS_BASE}/usr/lib/pm-utils/power.d/
 
-systemd-nspawn -D ${ROOTFS_BASE}/ --bind debs:/opt/debs apt install -y \
-	/opt/debs/variscite/imx-firmware-epdc_8.8-var02_arm64.deb \
-	/opt/debs/variscite/imx-firmware-sdma_8.8-var02_arm64.deb \
-	/opt/debs/variscite/imx-firmware-vpu_8.8-var02_arm64.deb
-
 systemd-nspawn -D ${ROOTFS_BASE}/ ln -sf /bin/busybox /bin/usleep
 
 
